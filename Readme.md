@@ -1,7 +1,7 @@
 # Dead Man's Switch
 
 A docker container to monitor other docker containers based on the dead man's
-switch priciple.
+switch principle.
 
 Some containers are neither able to self-recover nor self-terminate when they
 run into trouble.
@@ -14,11 +14,11 @@ that have been silent for longer than a predetermined time.
 
     docker run -d --rm -v /var/run/docker.sock:/var/run/docker.sock ijmacd/dms <monitored_container> [<timeout>] [<interval>]
 
-`<monitored_container>` is the name of the container you want monitored.  
+`<monitored_container>` is the name of the container you want monitored.
 `<timeout>` is the period of silence before the container is restarted. This is
 optional and uses the relative format from the linux `date` command. It defaults
-to `'-1hour'`  
-`<interval>` is also optional and is the monitoring interval in seconds. This 
+to `'-1hour'`
+`<interval>` is also optional and is the monitoring interval in seconds. This
 defaults to `'60'` seconds.
 
 
