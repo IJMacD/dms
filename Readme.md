@@ -8,11 +8,19 @@ run into trouble.
 
 If you have a container that you expect regular logging output from, and long
 periods of no output are unexpected; then this container can restart containers
-that have been silent for longer than a predetrmined time.
+that have been silent for longer than a predetermined time.
 
 ## Usage
 
-    docker run -d --rm -v /var/run/docker.sock:/var/run/docker.sock ijmacd/dms <monitored_container>
+    docker run -d --rm -v /var/run/docker.sock:/var/run/docker.sock ijmacd/dms <monitored_container> [<timeout>] [<interval>]
+
+`<monitored_container>` is the name of the container you want monitored.  
+`<timeout>` is the period of silence before the container is restarted. This is
+optional and uses the relative format from the linux `date` command. It defaults
+to `'-1hour'`  
+`<interval>` is also optional and is the monitoring interval in seconds. This 
+defaults to `'60'` seconds.
+
 
 ## Inception
 
