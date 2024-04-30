@@ -24,7 +24,7 @@ defaults to `'60'` seconds.
 
 ## Inception
 
-This container produces regular output so its possible to put a dead man's
+This container produces regular output so it's possible to put a dead man's
 switch on the dead man's switch.
 
     docker run -d --rm -v /var/run/docker.sock:/var/run/docker.sock --name one ijmacd/dms <monitored_container>
